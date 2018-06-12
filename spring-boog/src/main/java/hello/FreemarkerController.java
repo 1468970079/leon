@@ -11,7 +11,7 @@ public class FreemarkerController {
 
 	@RequestMapping("hello")
 	public String freemarker(Map<String,Object> map) {
-		map.put("msg", "Hello Freemarker");
+		map.put("msg", "HelloFreemarker");
 		return "hello";
 	}
 	
