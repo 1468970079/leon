@@ -1,4 +1,4 @@
-package hello;
+package com.spring.boot.hello;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;

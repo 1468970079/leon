@@ -1,4 +1,4 @@
-package hello;
+package com.spring.boot.hello;
 
 public class MyException extends RuntimeException {
 

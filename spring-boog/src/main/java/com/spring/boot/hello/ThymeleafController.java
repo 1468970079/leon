@@ -1,4 +1,4 @@
-package hello;
+package com.spring.boot.hello;
 
 import java.util.Map;
 
