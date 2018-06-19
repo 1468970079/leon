@@ -6,16 +6,19 @@ import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
-import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 import com.spring.boot.hello.WebSocketServer;
 
-@Configuration
-public class WebSocketConfig {
-    
+@Configuration  
+@EnableWebSocket  
+public class WebSocketConfig implements WebSocketConfigurer {  
+    @Override  
+    public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {  
+        registry.addHandler(webSocketServer(), "/webSocketServer/*"); 
+    }  
+  
     @Bean
-    public ServerEndpointExporter serverEndpointExporter() {
-        return new ServerEndpointExporter();
-    }
-
+    public WebSocketHandler webSocketServer() {  
+        return new WebSocketServer();  
+    }  
 }

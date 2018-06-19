@@ -20,7 +20,7 @@ public class UserDaoTest {
     private UserDao userDao;
 
     
-    @Test
+//    @Test
     public void testInsert() {
         User user = new User();
 //        user.setId(1);
@@ -34,11 +34,11 @@ public class UserDaoTest {
     
     @Test
     public void testGetById() {
-        User user = this.userDao.getById(1);
-        System.out.println(user.getUsername());
+        User user = this.userDao.getById(3);
+        System.out.println(user);
     }
     
-    @Test
+//    @Test
     public void testUpdate() {
         User user = new User();
         user.setId(1);
@@ -46,7 +46,7 @@ public class UserDaoTest {
         this.userDao.update(user);
     }
     
-    @Test
+//    @Test
     public void testDeleteById() {
         int result = this.userDao.deleteById(1);
         System.out.println(result);
