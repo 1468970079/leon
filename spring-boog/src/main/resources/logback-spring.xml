@@ -7,6 +7,8 @@
     <!-- pro文件路径 -->
     <property name="PRO_FILE_PATH" value="/opt/test/log" />
     
+    <logger name="org.springframework.jdbc.core.JdbcTemplate" level="debug"/>
+    
     <!-- 开发环境 -->
     <springProfile name="dev">
         <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
