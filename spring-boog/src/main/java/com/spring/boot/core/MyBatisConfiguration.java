@@ -31,7 +31,7 @@ public class MyBatisConfiguration {
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         Resource[] mapperXml;
         try {
-            mapperXml = resolver.getResources("classpath:mybatis/mapper/*.xml");
+            mapperXml = resolver.getResources("classpath:mybatis/mapping/*.xml");
             sqlSessionFactoryBean.setMapperLocations(mapperXml);
         } catch (IOException e) {
             e.printStackTrace();

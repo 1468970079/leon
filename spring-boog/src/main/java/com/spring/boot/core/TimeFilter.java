@@ -8,6 +8,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 
 public class TimeFilter implements Filter {
 
@@ -21,7 +22,7 @@ public class TimeFilter implements Filter {
 			throws IOException, ServletException {
 		long start = System.currentTimeMillis();
 		chain.doFilter(request, response);
-		System.out.println("filter耗时:" + (System.currentTimeMillis() - start) + "ms");
+		System.out.println(((HttpServletRequest)request).getRequestURL() + "---filter耗时:" + (System.currentTimeMillis() - start) + "ms");
 	}
 
 	@Override
