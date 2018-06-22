@@ -8,19 +8,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.boot.mapper.DepartmentMapper;
 import com.spring.boot.model.Department;
+import com.spring.boot.service.DepartmentService;
 
 @Controller
-@RequestMapping("druidTest")
-public class DruidController {
+@RequestMapping("department")
+@ResponseBody
+public class DepartmentController {
 
 
     @Autowired
-    private DepartmentMapper departmentMapper;
+    private DepartmentService departmentService;
 	
-    @GetMapping("getById")
-    @ResponseBody
+    @RequestMapping("getById")
     public Department druid(Integer id) {
-    	Department result = departmentMapper.selectByPrimaryKey(id);
+    	Department result = departmentService.getDepartmentById(id);
     	System.out.println(result);
     	return result;
     }
